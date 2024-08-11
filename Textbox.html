@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="Website icon" href="https://static-00.iconduck.com/assets.00/create-link-icon-2048x2048-vdoe2pfs.png">
+    <title>Link.az</title>
+
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 750px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 750px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+   
+    
+}
+
+
+
+.kitab{
+    width: 200px;
+    height: 300px;
+    background-color: #111;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin: 15px;
+    margin-top: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+.kitab1{
+    width: 200px;
+    height: 300px;
+    background-color: #111;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin: 15px;
+    margin-top: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+span{
+    font-size: 30px;
+}
+
+i{
+    margin: 10px;
+}
+
+.basliq{
+  font-size: 40px;
+  color: rgb(103, 173, 11);
+  
+}
+
+.bas{
+  text-align: center;
+}
+
+.resm{
+  background-image: url("https://www.abiturient.az/storage/projects/English_TT_1_az_2023.jpg");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm1{
+  background-image: url("https://eduroom.az/uploads/posts/2023-09/1694449147_mir_az-ekran-resmi-2023-09-09-19_19_14.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm2{
+  background-image: url("https://eduroom.az/uploads/posts/2024-01/1706701952_images.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left:30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm3{
+  background-image: url("https://eduroom.az/uploads/posts/2023-12/mir_az-ge-catalog-kitablar-dim-test_toplusu_kimya_2020-az_hisse2.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm4{
+  background-image: url("https://mir.az/uploads/posts/2023-12/Mir.az-screenshot_2023-12-08-16-45-29-85_2c052828f9bc068f981717dba52f469b.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm5{
+  background-image: url("https://eduroom.az/uploads/posts/2024-01/sddefault-1.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm6{
+  background-image: url("https://mir.az/uploads/posts/2023-10/Mir.az-english_tt_1_az_2023-1-1.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm7{
+  background-image: url("https://eduroom.az/uploads/posts/2023-12/photo_2022-02-10_05-57-04.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+
+.resm8{
+  background-image: url("https://eduroom.az/uploads/posts/2024-04/3046cc8d28_ekran-resmi-2024-04-08-00_35_23.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm9{
+  background-image: url("https://eduroom.az/uploads/posts/2023-09/mir_az-ekran-resmi-2023-09-09-19_35_29.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm10{
+  background-image: url("https://www.kitabyurdu.org/uploads/posts/2021-06/1622538084_0001-1727250308_20210522_215254_0000.png");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm11{
+  background-image: url("https://img.kitapyurdu.com/v1/getImage/fn:88669/wh:true/wi:800");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm12{
+  background-image: url("https://img.kitapyurdu.com/v1/getImage/fn:198560/wh:true/wi:800");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm13{
+  background-image: url("https://img.kitapyurdu.com/v1/getImage/fn:11842430/wh:true/wi:500");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+
+.resm14{
+  background-image: url("https://iletisim.com.tr/Images/UserFiles/Images/Spot/kotu-kalp.jpg");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm15{
+  background-image: url("https://imgv2-1-f.scribdassets.com/img/document/677167027/original/133893721c/1723092856?v=1");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm16{
+  background-image: url("https://eduroom.az/uploads/posts/2024-01/mir_az-ekran-resmi-2024-01-10-17_43_06.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm17{
+  background-image: url("https://imgv2-1-f.scribdassets.com/img/document/629180519/original/c24a72e233/1719039693?v=1");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm18{
+  background-image: url("https://i.pinimg.com/736x/11/c7/b5/11c7b52d8f37e570ac9867ff94b6f11f.jpg");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm19{
+  background-image: url("https://eduroom.az/uploads/posts/2023-02/1672384156_mir_az-ekran-alintisi.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm20{
+  background-image: url("https://mir.az/uploads/posts/2024-07/93c00adb90_9786059585422_genc-sherlock.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm21{
+  background-image: url("https://i.pinimg.com/736x/11/c7/b5/11c7b52d8f37e570ac9867ff94b6f11f.jpg");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm22{
+  background-image: url("https://i.pinimg.com/736x/11/c7/b5/11c7b52d8f37e570ac9867ff94b6f11f.jpg");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.text{
+  color: #f2f2f2;
+  margin-top: 25px;
+}
+
+.nov{
+  color: green;
+  font-size: 14px;
+  margin: 10px;
+}
+
+button{
+  font-size: 15px;
+  padding: 1px 15px;
+  border-radius: 10px;
+  color: #111;
+  
+}
+
+.but:hover{
+  background-color: black;
+  color: #fff;
+  
+  transition: 0.5s;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  background-color: black;
+  color: #fff;
+  transition: 0.5s;
+  
+}
+
+@media only screen and (max-width: 760px){
+            .content{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                width: 100%;
+                
+                
+       }
+}
+
+
+
+@media only screen and (max-width: 760px){
+            .kitab{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .kitab1{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .kitab2{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .kitab3{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .kitab4{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .kitab5{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .kitab6{
+                width: 150px;
+                margin: 15px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm1{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm2{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm3{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm4{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm5{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm6{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm7{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm8{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm9{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm10{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm11{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm12{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm13{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm14{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm15{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm16{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm17{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm18{
+                margin-left: 5px;
+       }
+}
+
+
+
+@media only screen and (max-width: 760px){
+            .kitab1{
+              width: 200px;
+       }
+}
+
+#find{
+  font-size: 25px;
+  border: none;
+  border-bottom: solid 0.5px;
+  width: 100%;
+}
+
+#ss{
+  font-size: 25px;
+}
+
+.onerilen{
+  display: flex;
+  width: 100%;
+  overflow-x: scroll ;
+}
+  
+  .search{
+    display: flex;
+  }
+
+</style>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">Link.az</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a  href="#">Home</a></li>
+          <li><a class="active" href="#">Textbook</a></li>
+          <li><a href="#">Novels</a></li>
+          <li><a href="#">Contact</a></li>
+          
+        </ul>
+    </nav>
+      <br>
+      <div class="bas">
+      <span class="basliq">
+        Bilmək Hər şeyi Dəyişdirir!
+      </span>
+      </div>
+      <br>
+      <h2>
+        <i class="fa-solid fa-fire"></i>Önərilənlər
+      </h2>
+      <div class="onerilen">
+        <div class="kitab1">
+            <div class="resm">
+
+            </div>
+            <div class="text">
+              <h5>English Dim Toplu  I hissə 2023</h5>
+            </div>
+            <div class="nov">
+              Dərslik
+            </div>
+            <button class="but"><a href="https://drive.google.com/file/d/1MC55wnXXnOCwv1qmuOejBTem1MAY5Q7R/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          </div>
+
+          
+          <div class="kitab1">
+            <div class="resm4">
+
+            </div>
+            <div class="text">
+              <h5>Riyaziyyat Dim Toplu II hissə 2023</h5>
+            </div>
+            <div class="nov">
+              Dərslik
+            </div>
+            <button class="but"><a href="https://drive.google.com/file/d/1PjqqrEAykNY-g823JwMujoHACD7fGRkP/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          </div>
+
+          <div class="kitab1">
+            <div class="resm5">
+
+            </div>
+            <div class="text">
+              <h5>Informatika Dim Toplu 2023</h5>
+            </div>
+            <div class="nov">
+              Dərslik
+            </div>
+            <button class="but"><a href="https://drive.google.com/file/d/1yrZBYySYsvOZHud1J-O8qzUvJAOI343k/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          </div>
+
+          <div class="kitab1">
+            <div class="resm9">
+  
+            </div>
+            <div class="text">
+             <h5>Fizika Dim Toplu I hissə 2023</h5>
+            </div>
+            <div class="nov">
+              Dərslik
+            </div>
+            <button class="but"><a href="https://drive.google.com/file/d/1drtzFgZRUnvsEedYeJbl8CXynlsB-OKB/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          </div>
+  
+          <div class="kitab1">
+            <div class="resm15">
+  
+            </div>
+            <div class="text">
+             <h5>Azərbaycan Dim Toplu I hissə 2023</h5>
+            </div>
+            <div class="nov">
+              Dərslik
+            </div>
+            <button class="but"><a href="https://drive.google.com/file/d/1BNdYmabRfxWuip8OQvz-9luYJiaoU91F/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          </div>
+
+      </div>
+
+      <br><br><div class="search"><i id="ss" class="fa-solid fa-magnifying-glass"></i><input type="text" name="" id="find" placeholder="Kitab axtar..." onkeyup="search()"></div>
+      <div class="content">
+        
+
+
+            
+            
+            <div class="kitab">
+              <div class="resm2">
+
+              </div>
+              <div class="text">
+                <h5>Fizika Dim Toplu II hissə 2023</h5>
+              </div>
+              <div class="nov">
+                Dərslik
+              </div>
+              <button class="but"><a href="https://drive.google.com/file/d/1hitc2XBiHP7iWsxiqTAUSQCwQu34SsBD/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+            </div>
+
+            <div class="kitab">
+              <div class="resm3">
+
+              </div>
+              <div class="text">
+                <h5>Kimya Dim Toplu II hissə 2019</h5>
+              </div>
+              <div class="nov">
+                Dərslik
+              </div>
+              <button class="but"><a href="https://drive.google.com/file/d/1vfSe_h7H-rQy8o3xTElmPTjlYNPmIUv-/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+            </div>
+
+        
+        
+        <div class="kitab">
+          <div class="resm7">
+
+          </div>
+          <div class="text">
+            <h5>Nərgiz Nəcəf 2022 100 sınaq</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/1H9NldUFpcZ1K1H08yni37JBoh6aso7zl/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+        <div class="kitab">
+          <div class="resm6">
+
+          </div>
+          <div class="text">
+            <h5>English Dim Toplu II hissə 2023</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/1hg0eIo3rlomKAUpJhsf_Nu-HFgeBMPZM/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+        <div class="kitab">
+          <div class="resm8">
+
+          </div>
+          <div class="text">
+            <h5>Riyaziyyat Güvən blok Testlər</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/1EYTgMmoMeAwr8eVFCro5q-btEeJjft0l/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+       
+
+        <div class="kitab">
+          <div class="resm16">
+
+          </div>
+          <div class="text">
+           <h5>Azərbaycan Dim Toplu II hissə 2023</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/1pMIbRPaYPWU8b_pyvmZq9I_SBnGciudz/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+        <div class="kitab">
+          <div class="resm17">
+
+          </div>
+          <div class="text">
+           <h5>Fizika Güvən 2022</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/1byBbVi9_GqAge0byV7iy3pbQeLs-54DE/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+        <div class="kitab">
+          <div class="resm18">
+
+          </div>
+          <div class="text">
+           <h5>Kimya Dim Toplu I hissə 2023</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/15csof_dtsm_RZe10Brc3jcKy-K4cmakX/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+        <div class="kitab">
+          <div class="resm19">
+
+          </div>
+          <div class="text">
+           <h5>Nərgiz Nəcəf siniflər lüğəti</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/17a-xFVZosUvXxcQUCcIeL0wH91xMuhsM/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+
+        <div class="kitab">
+          <div class="resm1">
+
+          </div>
+          <div class="text">
+           <h5>Riyaziyyat Dim Toplu  I hissə 2023</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://drive.google.com/file/d/10uJUZJdQxNkbGNF_gEXVoawB6aalXhCd/view?usp=sharing" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+        </div>
+      </div>
+    
+      <script type="text/javascript">
+        function search() {
+        let filter = document.getElementById('find').value.toUpperCase();
+        let item = document.querySelectorAll('.kitab');
+        let l = document.getElementsByTagName('h5');
+        for(var i = 0;i<=l.length;i++){
+        let a=item[i].getElementsByTagName('h5')[0];
+        let value=a.innerHTML || a.innerText || a.textContent;
+        if(value.toUpperCase().indexOf(filter) > -1) {
+        item[i].style.display="";
+        }
+        else
+        {
+        item[i].style.display="none";
+        }
+        }
+        }
+        </script>
+
+</body>
+</html>
