@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 } 
+body{
+  background-color: #303030;
+}
 nav{
   display: flex;
   height: 80px;
@@ -121,7 +125,7 @@ input[type="checkbox"]{
 .kitab{
     width: 200px;
     height: 300px;
-    background-color: #111;
+    background: linear-gradient(120deg,#0559b2,#ca9809);
     border-radius: 10px;
     padding: 20px 20px;
     margin: 15px;
@@ -133,7 +137,7 @@ input[type="checkbox"]{
 .kitab1{
     width: 200px;
     height: 300px;
-    background-color: #111;
+    background: linear-gradient(120deg,#0559b2,#ca9809);
     border-radius: 10px;
     padding: 20px 20px;
     margin: 15px;
@@ -423,7 +427,7 @@ i{
 }
 
 .nov{
-  color: green;
+  color: blue;
   font-size: 14px;
   margin: 10px;
 }
@@ -432,7 +436,7 @@ button{
   font-size: 15px;
   padding: 1px 15px;
   border-radius: 10px;
-  color: #111;
+  background: linear-gradient(120deg,#0559b2,#ca9809);
   
 }
 
@@ -448,7 +452,7 @@ a{
   text-decoration: none;
 }
 a:hover{
-  background-color: black;
+  
   color: #fff;
   transition: 0.5s;
   
@@ -635,12 +639,15 @@ a:hover{
 #find{
   font-size: 25px;
   border: none;
-  border-bottom: solid 0.5px;
+  border-bottom: solid 0.5px #fff;
   width: 100%;
+  background-color: #303030;
+  
 }
 
 #ss{
   font-size: 25px;
+  color: #fff;
 }
 
 .onerilen{
@@ -651,14 +658,17 @@ a:hover{
   
   .search{
     display: flex;
-  }
 
+  }
+h2{
+  color: red;
+}
 </style>
 
 </head>
 <body>
     <nav>
-        <div class="logo">Link.az</div>
+        <div class="logo"><i class="fa-solid fa-link"></i>Link.az</div>
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
           <i class="fas fa-bars"></i>
@@ -667,7 +677,7 @@ a:hover{
           <li><a  href="https://ferko20078.github.io/Link/Link.html">Home</a></li>
           <li><a class="active" href="#">Textbook</a></li>
           <li><a href="https://ferko20078.github.io/Novels/Novels.html">Novels</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="https://ferko20078.github.io/elaqe/contact.html">Contact</a></li>
           
         </ul>
     </nav>
