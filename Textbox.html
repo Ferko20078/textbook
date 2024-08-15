@@ -1056,6 +1056,200 @@ h2{
   font-size: 16px;
   color: yellow;
 }
+
+
+/*chatbot*/
+
+
+.chat-header a{
+    text-decoration:none;
+    color: white;
+}
+
+.copyright{
+    font-size:12px;
+    text-align: center;
+}
+
+.copyright a {
+    text-decoration:none;
+    color: #343c41;
+}
+.i{
+  font-size: 23px;
+}
+#chatbot-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 16px 14px;
+    border: none;
+    background-color: #1087FF;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1001; /* Ensure the button is above the chatbot popup */
+}
+
+
+
+.chatbot-popup {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #303030;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90%;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: black;
+    color: #fff;
+    padding: 15px 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-box {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 15px 20px;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+}
+
+#user-input {
+    font-family: "Poppins";
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+}
+
+#send-btn {
+    font-family: "Poppins", sans-serif;
+    padding: 10px 20px;
+    border: none;
+    background-color: #1087FF;
+    color: #fff;
+    border-radius: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-btn:hover {
+    background-color: #0074CC;
+}
+
+.user-message {
+    background-color: #f3f3f3;
+    color: #333;
+    padding: 14px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 10px; /* Push user message to the left */
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* Move user message to the right */
+}
+
+.user-message::before {
+    
+    position: absolute;
+    bottom: -17px;
+    right: -20px;
+    margin-bottom: 7px;
+    font-size: 20px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.bot-message {
+    background-color: black;
+    color: #fff;
+    padding: 14px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    align-self: flex-start; /* Move bot message to the left */
+    margin-right: 10px; /* Push bot message to the right */
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Adjust for button placement */
+}
+
+.bot-message::before {
+    
+    width: 20px;
+    position: absolute;
+    bottom: -17px;
+    left: -14px;
+    margin-bottom: 4px;
+    font-size: 20px;
+    background-color: #1087FF;
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.button-container button {
+    padding: 10px 50px;
+    border: none;
+    background-color: #1087FF;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0074CC;
+}
 </style>
 
 </head>
@@ -1532,6 +1726,18 @@ h2{
     </div>
   </div>
 
+  <button id="chatbot-toggle-btn"><i class="fas fa-link"></i></button>
+  <div class="chatbot-popup" id="chatbot-popup">
+      <div class="chat-header">
+          <span>Link.az</a></span>
+          <button id="close-btn">&times;</button>
+      </div>
+      <div class="chat-box" id="chat-box"></div>
+      <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Type a message...">
+          <button id="send-btn">Send</button>
+      </div>
+
   
     
    
@@ -1560,6 +1766,110 @@ h2{
         }
         }
         }
+
+
+
+
+         //chatbot
+
+         const responses = {
+   "hi": "Hello! How can I help you today?",
+    "hello": "Hello! How can I help you today?",
+    "coding hubs": "Here you will get Notes, Ebooks, project source Code, Interview questions. visit Coding Hubs.<a href='https://thecodinghubs.com' target='_blank'>Visit Website</a>",
+    "how are you": "I'm just a robot, but I'm here to help you!",
+    "help": "How can I help you today?",
+    "thank": "Goodbye! Have a nice day!",
+    "thank you": "Goodbye! Have a nice day!",
+    "bye": "Goodbye! Have a nice day!",
+    "default": "Sorry, I didn't understand it, please write in English",
+    "No": "Well, if you change your mind, let me know!",
+    "how can i download books": "A very simple! click of the 'yüklə' button",
+     "how can ı download books": "A very simple! click of the 'yüklə' button",
+     "how ı download books": "A very simple! click of the 'yüklə' button",
+     "how to download books": "A very simple! click of the 'yüklə' button",
+     "download books": "A very simple! click of the 'yüklə' button",
+     "download book": "A very simple! click of the 'yüklə' button",
+     "download": "A very simple! click of the 'yüklə' button",
+     "downloads": "A very simple! click of the 'yüklə' button",
+     "how to download book": "A very simple! click of the 'yüklə' button",
+     "how ı download book": "A very simple! click of the 'yüklə' button",
+     "how can ı download book": "A very simple! click of the 'yüklə' button",
+     "how  i download books": "A very simple! click of the 'yüklə' button",
+     "how download": "A very simple! click of the 'yüklə' button",
+     "Who was the creator?": "Farid Mammadli",
+     "who is creator": "Farid Mammadli",
+     "creator?": "Farid Mammadli",
+     "creator": "Farid Mammadli",
+     "who is creator?": "Farid Mammadli",
+     "who creator?": "Farid Mammadli",
+     "who is he?": "Farid Mammadli",
+     "44 gün": "This book tells about the stories that happened on the eve of the 44-day war.",
+     "Kötü k": "With extraordinary tension and fluidity, Seven Days in Mayis is a masterpiece full of overwhelming suspense. A work that shows how a destructive military conspiracy was made.",
+     "YAradıcı": "Farid Mammadli is the creator of this site",
+     "Who was": "Farid Mammadli is the creator of this site"
+
+
+
+
+
+
+};
+
+document.getElementById('chatbot-toggle-btn').addEventListener('click', toggleChatbot);
+document.getElementById('close-btn').addEventListener('click', toggleChatbot);
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('user-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+function toggleChatbot() {
+    const chatbotPopup = document.getElementById('chatbot-popup');
+    chatbotPopup.style.display = chatbotPopup.style.display === 'none' ? 'block' : 'none';
+}
+
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value.trim();
+    if (userInput !== '') {
+        appendMessage('user', userInput);
+        respondToUser(userInput.toLowerCase());
+        document.getElementById('user-input').value = '';
+    }
+}
+
+function respondToUser(userInput) {
+    const response = responses[userInput] || responses["default"];
+    setTimeout(function() {
+        appendMessage('bot', response);
+    }, 500);
+}
+
+function appendMessage(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+    messageElement.innerHTML = message;
+    chatBox.appendChild(messageElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    if (sender === 'bot' && message === responses["default"]) {
+        
+       
+        buttonYes.onclick = function() {
+            appendMessage('bot', responses["expert"]);
+        };
+        const buttonNo = document.createElement('button');
+        
+        buttonNo.onclick = function() {
+            appendMessage('bot', responses["no"]);
+        };
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+        buttonContainer.appendChild(buttonYes);
+        buttonContainer.appendChild(buttonNo);
+        chatBox.appendChild(buttonContainer);
+    }
+}
         </script>
 
 </body>
