@@ -722,6 +722,28 @@ i{
   background-position: center;
   background-size: cover;
 }
+.resm61{
+  background-image: url("https://mir.az/uploads/posts/2022-10/1665734007_Mir.az-1.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.resm62{
+  background-image: url("https://mir.az/uploads/posts/2022-12/Mir.az-photo-1.webp");
+  width: 100px;
+  height: 130px;
+  text-align: center;
+  border-radius: 16px;
+  justify-content: center;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+}
 
 
 .text{
@@ -1095,6 +1117,16 @@ a:hover{
                 margin-left: 5px;
        }
 }
+@media only screen and (max-width: 760px){
+            .resm61{
+                margin-left: 5px;
+       }
+}
+@media only screen and (max-width: 760px){
+            .resm62{
+                margin-left: 5px;
+       }
+}
 
 
 
@@ -1174,6 +1206,53 @@ h2{
   color: yellow;
 }
 
+
+
+/*language*/
+
+#lang{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 16px 16px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+}
+#lg{
+   
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    background: linear-gradient(100deg,#0559b2,#ca9809);
+    border-radius: 10px;
+    color: white;
+    bottom:76px;
+    display: none;
+}
+li{
+    list-style: none;
+    padding: 16px 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+.es:hover{
+    
+    background-color: #343c40;
+    transition: 0.3s;
+}
+img{
+    width: 16px;
+    border-radius: 100%;
+    height: 16px;
+}
+.a{
+    color: white;
+    font-weight: bold;
+}
 
 /*chatbot*/
 
@@ -1573,6 +1652,38 @@ h2{
         </div>
 
         <div class="kitab">
+          <div class="resm61">
+
+          </div>
+          <div class="text">
+            <h5>TAİM Biologiya Dərs Vəsaiti</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://mega.nz/file/NRp2VK5T#SayGRDgxfE4vg2au0zvJi-_X2btkoZTzwIdVz79wWgg" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          <div class="about">
+            <span class="abt">About</span><br><span class="mel">Biologiya dərsliyini əhatə edən nəzəriyyə toplusu.</span>
+      </div>
+        </div>
+
+        <div class="kitab">
+          <div class="resm62">
+
+          </div>
+          <div class="text">
+            <h5>Kimya Güvən Nəzəriyyə</h5>
+          </div>
+          <div class="nov">
+            Dərslik
+          </div>
+          <button class="but"><a href="https://mega.nz/file/0NoG2IrA#Z0bidnnkQGzWrz8mQeXbiuWyip05ccDTDnIj-GmCj4U" download="a"><i class="fa-solid fa-download"></i>Yüklə</a></button>
+          <div class="about">
+            <span class="abt">About</span><br><span class="mel">Güvən "Kimya Nəzəriyyələr Toplusu"</span>
+      </div>
+        </div>
+
+        <div class="kitab">
           <div class="resm59">
 
           </div>
@@ -1946,6 +2057,19 @@ h2{
     </div>
   </div>
 
+
+
+
+
+
+  <button id="lang" onclick="hide()"><img src="https://aztc.gov.az/uploads/flag.jpg"><b>    AZE</b></button>
+        <div id="lg">
+            <div class="diller">
+                <li class="es"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"><a href="https://ferko20078.github.io/textboxe/Textbox(english).html" class="a"<b>     ENG</b></a></li>
+              
+            </div>
+        </div>
+
   <button id="chatbot-toggle-btn"><i class="fas fa-link"></i></button>
   <div class="chatbot-popup" id="chatbot-popup">
       <div class="chat-header">
@@ -1987,6 +2111,18 @@ h2{
         }
         }
 
+
+
+
+
+         //language
+
+         document.getElementById('lang');
+
+function hide() {
+const language = document.getElementById('lg');
+language.style.display = language.style.display === 'none' ? 'block' : 'none';
+}
 
 
 
