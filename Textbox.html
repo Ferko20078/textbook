@@ -1672,7 +1672,7 @@ img{
 
           </div>
           <div class="text">
-            <h5>Kimya Güvən<br>Nəzəriyyə</h5>
+            <h5>Kimya Güvən Nəzəriyyə</h5>
           </div>
           <div class="nov">
             Dərslik
@@ -1704,7 +1704,7 @@ img{
 
           </div>
           <div class="text">
-            <h5>Riyaziyyat Test<br>Bankı</h5>
+            <h5>Riyaziyyat Test Bankı</h5>
           </div>
           <div class="nov">
             Dərslik
@@ -2117,12 +2117,15 @@ img{
 
          //language
 
-         document.getElementById('lang');
-
-function hide() {
-const language = document.getElementById('lg');
-language.style.display = language.style.display === 'none' ? 'block' : 'none';
-}
+         function hide() {
+          var x = document.getElementById("lg")
+          if(x.style.display ==="block"){
+            x.style.display = "none";
+          }
+          else{
+            x.style.display = "block";
+          }
+        }
 
 
 
@@ -2183,8 +2186,14 @@ document.getElementById('user-input').addEventListener('keypress', function(e) {
 });
 
 function toggleChatbot() {
-    const chatbotPopup = document.getElementById('chatbot-popup');
-    chatbotPopup.style.display = chatbotPopup.style.display === 'none' ? 'block' : 'none';
+    var chatbotPopup = document.getElementById('chatbot-popup')
+    if (chatbotPopup.style.display === "block"){
+      chatbotPopup.style.display = "none";
+    }
+    else{
+      chatbotPopup.style.display = "block";
+    }
+    
 }
 
 function sendMessage() {
